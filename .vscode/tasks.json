@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "java",
+            "command": "javac",
+            "args": [
+                "-d",
+                "${workspaceFolder}/out",
+                "-cp",
+                "${workspaceFolder}/lib/javafx-sdk-21.0.2/lib/*",
+                "${workspaceFolder}/*.java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run",
+            "type": "java",
+            "command": "java",
+            "args": [
+                "-cp",
+                "${workspaceFolder}/out:${workspaceFolder}/lib/javafx-sdk-{version}/lib/*",
+                "MainApp"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
